@@ -16,22 +16,7 @@ namespace WOTC.LayeredAttribute.Barry
         }
 
         public Dictionary<AttributeKey, int> AttributesDictionary { get; set; }
-
-
-        private Dictionary<AttributeKey, List<LayeredEffectDefinition>> _layeredAttributesDictionary;
-
-        public Dictionary<AttributeKey, List<LayeredEffectDefinition>> LayeredAttributesDictionary
-        {
-            get
-            {
-                return _layeredAttributesDictionary;
-            }
-            set
-            {
-
-                _layeredAttributesDictionary = value;
-            }
-        }
+        public Dictionary<AttributeKey, List<LayeredEffectDefinition>> LayeredAttributesDictionary { get; set; }
 
 
         private List<LayeredEffectDefinition> GetOrderedLayeredListForAttribute(AttributeKey key)
@@ -91,7 +76,7 @@ namespace WOTC.LayeredAttribute.Barry
         {
 
             if (!LayeredAttributesDictionary.ContainsKey(effect.Attribute)) LayeredAttributesDictionary[effect.Attribute] = new List<LayeredEffectDefinition>();
-            effect.TimeStamp = DateTime.Now;
+            if (effect.TimeStamp == DateTime.MinValue) effect.TimeStamp = DateTime.Now;
             LayeredAttributesDictionary[effect.Attribute].Add(effect);
 
 

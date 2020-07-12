@@ -61,8 +61,52 @@ namespace WOTC.LayeredAttribute.Tests
         [TestMethod]
         public void ShockOnlyCreature()
         {
+
             Creature.AddLayeredEffect(Shock(1));
             Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Toughness) == BASEPOWERTOUGHNESS - SHOCKDAMAGE);
+        }
+
+
+        [TestMethod]
+        public void BitwiseAndCheck_Color()
+        {
+
+            Creature.SetBaseAttribute(AttributeKey.Color, 77);
+
+            Creature.AddLayeredEffect(new LayeredEffectDefinition() { Attribute = AttributeKey.Color, Layer = 1, Modification = 11, Operation = EffectOperation.BitwiseAnd });
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Color) == 9);
+        }
+
+        [TestMethod]
+        public void AffectDifferent_attributeand_check_default_BitwiseAndCheck_Color()
+        {
+
+            Creature.SetBaseAttribute(AttributeKey.Types, 77);
+
+            Creature.AddLayeredEffect(new LayeredEffectDefinition() { Attribute = AttributeKey.Types, Layer = 1, Modification = 11, Operation = EffectOperation.BitwiseAnd});
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Types) == 9);
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Power) == BASEPOWERTOUGHNESS);
+        }
+
+        [TestMethod]
+        public void BitwiseOrCheck_Controller()
+        {
+
+            Creature.SetBaseAttribute(AttributeKey.Controller, 77);
+
+            Creature.AddLayeredEffect(new LayeredEffectDefinition() { Attribute = AttributeKey.Controller, Layer = 1, Modification = 11, Operation = EffectOperation.BitwiseOr });
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Controller) == 79);
+        }
+
+
+        [TestMethod]
+        public void BitwiseXorCheck_loyalty()
+        {
+
+            Creature.SetBaseAttribute(AttributeKey.Loyalty, 77);
+
+            Creature.AddLayeredEffect(new LayeredEffectDefinition() { Attribute = AttributeKey.Loyalty, Layer = 1, Modification = 11, Operation = EffectOperation.BitwiseXor });
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Loyalty) == 70);
         }
 
         [TestMethod]
@@ -91,6 +135,7 @@ namespace WOTC.LayeredAttribute.Tests
             Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Power) == 2);
         }
 
+
         [TestMethod]
         public void Shocklayer2_plusone_layer2_plusone_layer2_duress_layer1_shock_layer1_Creature()
         {
@@ -109,6 +154,42 @@ namespace WOTC.LayeredAttribute.Tests
 
             Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Toughness) == BASEPOWERTOUGHNESS - SHOCKDAMAGE + PLUSONECOUNTERMODIFIER - DURESSMINUSCOUNTERMODIFIER - SHOCKDAMAGE + PLUSONECOUNTERMODIFIER);
             Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Power) == BASEPOWERTOUGHNESS + PLUSONECOUNTERMODIFIER + PLUSONECOUNTERMODIFIER - DURESSMINUSCOUNTERMODIFIER);
+        }
+
+        [TestMethod]
+        public void MultiEffectApply_followed_byInvalid()
+        {
+
+            Creature.AddLayeredEffect(Shock(2));
+            Creature.AddLayeredEffect(PlusOneToughness(1));
+            Creature.AddLayeredEffect(PlusOnePower(1));
+            Creature.AddLayeredEffect(PlusOneToughness(2));
+            Creature.AddLayeredEffect(PlusOnePower(2));
+            Creature.AddLayeredEffect(DuressPower(1));
+            Creature.AddLayeredEffect(DuressToughness(1));
+            Creature.AddLayeredEffect(Shock(1));
+
+
+            Creature.AddLayeredEffect(new LayeredEffectDefinition() { Attribute = AttributeKey.Toughness, Layer = 100, Modification = 11, Operation = EffectOperation.Invalid });
+
+
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Toughness) == 0);
+
+            Assert.IsFalse(Creature.GetCurrentAttribute(AttributeKey.Toughness) == BASEPOWERTOUGHNESS - SHOCKDAMAGE + PLUSONECOUNTERMODIFIER - DURESSMINUSCOUNTERMODIFIER - SHOCKDAMAGE + PLUSONECOUNTERMODIFIER);
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Power) == BASEPOWERTOUGHNESS + PLUSONECOUNTERMODIFIER + PLUSONECOUNTERMODIFIER - DURESSMINUSCOUNTERMODIFIER);
+        }
+        [TestMethod]
+        public void TestTimeStamp()
+        {
+            Creature.AddLayeredEffect(Shock(1));
+            Creature.AddLayeredEffect(PlusOneToughness(1));
+            Creature.AddLayeredEffect(PlusOnePower(1));
+            Creature.AddLayeredEffect(new LayeredEffectDefinition() { Attribute = AttributeKey.Toughness, Layer = 1, Modification = 10, Operation = EffectOperation.Set, TimeStamp = DateTime.Now.AddMinutes(-10) });
+
+            //order is by timestamp as all are layer 1
+            //Touhgness - set to 10->shock(-2) -> plus one = 9
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Toughness) == 9);
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Power) == BASEPOWERTOUGHNESS + PLUSONECOUNTERMODIFIER);
         }
 
         [TestMethod]
@@ -268,7 +349,7 @@ namespace WOTC.LayeredAttribute.Tests
         }
         private static LayeredEffectDefinition Shock(int layer)
         {
-            return new LayeredEffectDefinition() { Attribute = AttributeKey.Toughness, Layer = layer, Modification = SHOCKDAMAGE, Operation = EffectOperation.Subtract };
+            return new LayeredEffectDefinition() { Attribute = AttributeKey.Toughness, Layer = layer, Modification = SHOCKDAMAGE, Operation = EffectOperation.Subtract};
         }
         #endregion
     }

@@ -63,6 +63,8 @@ namespace WOTC.LayeredAttribute.Barry
     /// </summary>
     public struct LayeredEffectDefinition
     {
+
+       
         /// <summary> 
         /// Which attribute this layered effect applies to.
         /// </summary>
@@ -90,7 +92,7 @@ namespace WOTC.LayeredAttribute.Barry
 
         /// <summary>
         /// BARRYA Added property 
-        /// Planning on doing some ordering of items so using timestamp to keep the order
+        /// Planning on doing some linq ordering of items so using timestamp to keep the order
         /// </summary>
         public DateTime TimeStamp { get; set; }
     }
