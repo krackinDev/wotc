@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOTC.LayeredAttribute.Barry", "WOTC.LayeredAttribute.Barry.csproj", "{92A98AEE-84D7-4340-A841-58F637F2B304}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOTC.LayeredAttribute.Tests", "..\WOTC.LayeredAttribute.Tests\WOTC.LayeredAttribute.Tests.csproj", "{9F2C3AD9-61AA-4717-AC7A-905FBA8E538E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92A98AEE-84D7-4340-A841-58F637F2B304}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A98AEE-84D7-4340-A841-58F637F2B304}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A98AEE-84D7-4340-A841-58F637F2B304}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A98AEE-84D7-4340-A841-58F637F2B304}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F2C3AD9-61AA-4717-AC7A-905FBA8E538E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2C3AD9-61AA-4717-AC7A-905FBA8E538E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2C3AD9-61AA-4717-AC7A-905FBA8E538E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2C3AD9-61AA-4717-AC7A-905FBA8E538E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE4285DD-328F-4198-9D6E-9BC99776A53F}
+	EndGlobalSection
+EndGlobal

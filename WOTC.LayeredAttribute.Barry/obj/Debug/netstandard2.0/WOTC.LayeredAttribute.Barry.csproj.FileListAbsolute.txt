@@ -1,0 +1,9 @@
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Barry\obj\Debug\netstandard2.0\WOTC.LayeredAttribute.Barry.csprojAssemblyReference.cache
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Barry\obj\Debug\netstandard2.0\WOTC.LayeredAttribute.Barry.AssemblyInfoInputs.cache
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Barry\obj\Debug\netstandard2.0\WOTC.LayeredAttribute.Barry.AssemblyInfo.cs
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Barry\obj\Debug\netstandard2.0\WOTC.LayeredAttribute.Barry.csproj.CoreCompileInputs.cache
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Barry\bin\Debug\netstandard2.0\WOTC.LayeredAttribute.Barry.deps.json
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Barry\bin\Debug\netstandard2.0\WOTC.LayeredAttribute.Barry.dll
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Barry\bin\Debug\netstandard2.0\WOTC.LayeredAttribute.Barry.pdb
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Barry\obj\Debug\netstandard2.0\WOTC.LayeredAttribute.Barry.dll
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Barry\obj\Debug\netstandard2.0\WOTC.LayeredAttribute.Barry.pdb

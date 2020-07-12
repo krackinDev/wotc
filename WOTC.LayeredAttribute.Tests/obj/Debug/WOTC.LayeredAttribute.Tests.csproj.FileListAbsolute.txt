@@ -1,0 +1,16 @@
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\bin\Debug\WOTC.LayeredAttribute.Tests.dll
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\bin\Debug\WOTC.LayeredAttribute.Tests.pdb
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\obj\Debug\WOTC.LayeredAttribute.Tests.csprojAssemblyReference.cache
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\obj\Debug\WOTC.LayeredAttribute.Tests.csproj.CoreCompileInputs.cache
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\obj\Debug\WOTC.LayeredAttribute.Tests.csproj.CopyComplete
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\obj\Debug\WOTC.LayeredAttribute.Tests.dll
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\obj\Debug\WOTC.LayeredAttribute.Tests.pdb
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\bin\Debug\WOTC.LayeredAttribute.Barry.dll
+C:\Users\BarryAndersen\source\repos\WOTC\WOTC.LayeredAttribute.Tests\bin\Debug\WOTC.LayeredAttribute.Barry.pdb
