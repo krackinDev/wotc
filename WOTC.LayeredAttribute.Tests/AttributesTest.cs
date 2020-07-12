@@ -66,6 +66,45 @@ namespace WOTC.LayeredAttribute.Tests
             Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Toughness) == BASEPOWERTOUGHNESS - SHOCKDAMAGE);
         }
 
+        [TestMethod]
+        public void Shock_LOADTEST_100_Creature()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                Creature.AddLayeredEffect(Shock(1));
+            }
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Toughness) == BASEPOWERTOUGHNESS - (100 * SHOCKDAMAGE));
+        }
+
+        [TestMethod]
+        public void Shock_LOADTEST_1000_Creature()
+        {
+            for (int i = 0; i < 1000; i++)
+            {
+                Creature.AddLayeredEffect(Shock(1));
+            }
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Toughness) == BASEPOWERTOUGHNESS - (1000 * SHOCKDAMAGE));
+        }
+
+        [TestMethod]
+        public void Shock_LOADTEST_10000_Creature()
+        {
+            for (int i = 0; i < 10000; i++)
+            {
+                Creature.AddLayeredEffect(Shock(1));
+            }
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Toughness) == BASEPOWERTOUGHNESS - (10000 * SHOCKDAMAGE));
+        }
+
+        [TestMethod]
+        public void Shock_LOADTEST_100000_Creature()
+        {
+            for (int i = 0; i < 100000; i++)
+            {
+                Creature.AddLayeredEffect(Shock(1));
+            }
+            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Toughness) == BASEPOWERTOUGHNESS - (100000 * SHOCKDAMAGE));
+        }
 
         [TestMethod]
         public void BitwiseAndCheck_Color()
