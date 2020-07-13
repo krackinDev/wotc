@@ -57,9 +57,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WOTC.LayeredAttribute.Barry\WOTC.LayeredAttribute.Barry.csproj">
+    <ProjectReference Include="..\WOTC.LayeredAttribute.Barry\Wotc.LayeredAttribute.Barry.csproj">
       <Project>{92a98aee-84d7-4340-a841-58f637f2b304}</Project>
-      <Name>WOTC.LayeredAttribute.Barry</Name>
+      <Name>Wotc.LayeredAttribute.Barry</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

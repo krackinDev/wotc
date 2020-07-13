@@ -35,6 +35,9 @@ namespace WOTC.LayeredAttribute.Barry.Helpers
                 case EffectOperation.Subtract:
                     result = value - modifier;
                     break;
+                default:
+                    throw new ArgumentException("Effect Operation is not implemented");
+                   
             }
             return result;
         }

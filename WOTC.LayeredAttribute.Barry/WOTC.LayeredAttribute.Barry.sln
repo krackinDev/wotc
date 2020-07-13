@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOTC.LayeredAttribute.Barry", "WOTC.LayeredAttribute.Barry.csproj", "{92A98AEE-84D7-4340-A841-58F637F2B304}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wotc.LayeredAttribute.Barry", "Wotc.LayeredAttribute.Barry.csproj", "{92A98AEE-84D7-4340-A841-58F637F2B304}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOTC.LayeredAttribute.Tests", "..\WOTC.LayeredAttribute.Tests\WOTC.LayeredAttribute.Tests.csproj", "{9F2C3AD9-61AA-4717-AC7A-905FBA8E538E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wotc.LayeredAttribute.Tests", "..\WOTC.LayeredAttribute.Tests\Wotc.LayeredAttribute.Tests.csproj", "{9F2C3AD9-61AA-4717-AC7A-905FBA8E538E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
