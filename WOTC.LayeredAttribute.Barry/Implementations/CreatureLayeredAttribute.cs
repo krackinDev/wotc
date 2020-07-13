@@ -11,8 +11,9 @@ namespace WOTC.LayeredAttribute.Barry
     {
         private const int DEFAULT_ATTRIBUTE_VALUE = 0;
       
-
+        //Base attributes collection to keep a separation of concern from the applied effects
         private Dictionary<AttributeKey, int> AttributesDictionary { get; set; } = new Dictionary<AttributeKey, int>();
+        //List of  layered effects stored via hashmap of they keys
         private Dictionary<AttributeKey, List<LayeredEffectDefinition>> LayeredAttributesDictionary { get; set; } = new Dictionary<AttributeKey, List<LayeredEffectDefinition>>();
 
 
@@ -53,27 +54,25 @@ namespace WOTC.LayeredAttribute.Barry
 
         private int GetBaseAttributeValue(AttributeKey key)
         {
-            if (AttributesDictionary.ContainsKey(key)) return AttributesDictionary[key];
+            var retVal = DEFAULT_ATTRIBUTE_VALUE;
+            AttributesDictionary.TryGetValue(key, out retVal);
             //Return default value if no attributes set 
-            return DEFAULT_ATTRIBUTE_VALUE;
+            return retVal;
         }
 
 
 
         public void ClearLayeredEffects()
         {
+            //Simple and clear way of removing effects as the base and layers are separated
             LayeredAttributesDictionary.Clear();
         }
 
         public void AddLayeredEffect(LayeredEffectDefinition effect)
         {
-
             if (!LayeredAttributesDictionary.ContainsKey(effect.Attribute)) LayeredAttributesDictionary[effect.Attribute] = new List<LayeredEffectDefinition>();
             if (!effect.TimeStamp.HasValue) effect.TimeStamp = DateTime.Now;
             LayeredAttributesDictionary[effect.Attribute].Add(effect);
-
-
-
         }
 
     }
