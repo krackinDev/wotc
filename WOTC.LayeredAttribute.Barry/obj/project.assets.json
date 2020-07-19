@@ -187,9 +187,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\BarryAndersen\\source\\repos\\WOTC\\WOTC.LayeredAttribute.Barry\\WOTC.LayeredAttribute.Barry.csproj",
-      "projectName": "WOTC.LayeredAttribute.Barry",
-      "projectPath": "C:\\Users\\BarryAndersen\\source\\repos\\WOTC\\WOTC.LayeredAttribute.Barry\\WOTC.LayeredAttribute.Barry.csproj",
+      "projectUniqueName": "C:\\Users\\BarryAndersen\\source\\repos\\WOTC\\WOTC.LayeredAttribute.Barry\\Wotc.LayeredAttribute.Barry.csproj",
+      "projectName": "Wotc.LayeredAttribute.Barry",
+      "projectPath": "C:\\Users\\BarryAndersen\\source\\repos\\WOTC\\WOTC.LayeredAttribute.Barry\\Wotc.LayeredAttribute.Barry.csproj",
       "packagesPath": "C:\\Users\\BarryAndersen\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\BarryAndersen\\source\\repos\\WOTC\\WOTC.LayeredAttribute.Barry\\obj\\",
       "projectStyle": "PackageReference",

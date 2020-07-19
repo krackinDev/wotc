@@ -7,7 +7,7 @@ namespace WOTC.LayeredAttribute.Tests
     [TestClass]
     public class AttributesTest
     {
-        public CreatureLayeredAttributes Creature { get; set; }
+        public LayeredAttributes Creature { get; set; }
         //Crystalline Giant example creature
         const int BASEPOWERTOUGHNESS = 3;
         //Shock Instant
@@ -24,7 +24,7 @@ namespace WOTC.LayeredAttribute.Tests
         [TestInitialize]
         public void Initialize()
         {
-            Creature = new CreatureLayeredAttributes();
+            Creature = new LayeredAttributes();
             SetPowerAttribute();
             SetToughnessAttribute();
 
@@ -33,7 +33,7 @@ namespace WOTC.LayeredAttribute.Tests
         [TestMethod]
         public void CheckDefaultvalues()
         {
-            var newCreature = new CreatureLayeredAttributes();
+            var newCreature = new LayeredAttributes();
             Assert.IsTrue(newCreature.GetCurrentAttribute(AttributeKey.Color) == 0);
             Assert.IsTrue(newCreature.GetCurrentAttribute(AttributeKey.Controller) == 0);
             Assert.IsTrue(newCreature.GetCurrentAttribute(AttributeKey.ConvertedManaCost) == 0);
@@ -218,20 +218,7 @@ namespace WOTC.LayeredAttribute.Tests
             Assert.IsFalse(Creature.GetCurrentAttribute(AttributeKey.Toughness) == BASEPOWERTOUGHNESS - SHOCKDAMAGE + PLUSONECOUNTERMODIFIER - DURESSMINUSCOUNTERMODIFIER - SHOCKDAMAGE + PLUSONECOUNTERMODIFIER);
             Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Power) == BASEPOWERTOUGHNESS + PLUSONECOUNTERMODIFIER + PLUSONECOUNTERMODIFIER - DURESSMINUSCOUNTERMODIFIER);
         }
-        [TestMethod]
-        public void TestTimeStamp()
-        {
-            Creature.AddLayeredEffect(Shock(1));
-            Creature.AddLayeredEffect(PlusOneToughness(1));
-            Creature.AddLayeredEffect(PlusOnePower(1));
-            //I added a timestamp minvalue check  in the getattribute value to ensure that the time stamp ordering was being applied
-            Creature.AddLayeredEffect(new LayeredEffectDefinition() { Attribute = AttributeKey.Toughness, Layer = 1, Modification = 10, Operation = EffectOperation.Set, TimeStamp = DateTime.Now.AddMinutes(-10) });
-
-            //order is by timestamp as all are layer 1
-            //Touhgness - set to 10->shock(-2) -> plus one = 9
-            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Toughness) == 9);
-            Assert.IsTrue(Creature.GetCurrentAttribute(AttributeKey.Power) == BASEPOWERTOUGHNESS + PLUSONECOUNTERMODIFIER);
-        }
+       
 
         [TestMethod]
         public void MultiEffectReset_clear_Creature()

@@ -90,16 +90,12 @@ namespace WOTC.LayeredAttribute.Barry
         /// </summary>
         public int Layer { get; set; }
 
-        /// <summary>
-        /// BARRYA Added property 
-        /// Planning on doing some linq ordering of items so using timestamp to keep the order
-        /// Seeing as teferi is timebased , i added this as there may be a situation that we may want to add a specific timestamp to an effect
-        /// this is unlikley based on my knowledge of MTG but added it ot manage possible future changes
-        /// </summary>
-        public DateTime? TimeStamp { get; set; }
+       
     }
 
-    public enum EffectOperation
+   
+
+        public enum EffectOperation
     {
         Invalid = 0,
 
